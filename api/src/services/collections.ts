@@ -378,7 +378,7 @@ export class CollectionsService {
 
 		await this.knex.transaction(async (trx) => {
 			if (collectionToBeDeleted!.schema) {
-				await trx.schema.dropTable(collectionKey);
+				await trx.schema.raw('DROP TABLE if exists ' + collectionKey + ' cascade');
 			}
 
 			// Make sure this collection isn't used as a group in any other collections
