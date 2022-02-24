@@ -2,7 +2,7 @@ table: directus_users
 
 columns:
   id:
-    type: uuid
+    type: string
     primary: true
     nullable: false
   first_name:
